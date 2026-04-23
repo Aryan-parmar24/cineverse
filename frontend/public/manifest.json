@@ -1,3 +1,4 @@
+cat > ~/Desktop/cineverse/frontend/public/manifest.json << 'EOF'
 {
   "name": "CineVerse - Watch Movies & Series",
   "short_name": "CineVerse",
@@ -23,3 +24,4 @@
     }
   ]
 }
+EOF
