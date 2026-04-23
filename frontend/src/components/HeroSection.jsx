@@ -5,7 +5,7 @@ import { BACKDROP_BASE } from '../services/api';
 
 const HeroSection = ({ movies }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
+ 
   useEffect(() => {
     if (!movies || movies.length === 0) return;
     const interval = setInterval(() => {
