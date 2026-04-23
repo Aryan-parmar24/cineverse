@@ -1,36 +1,152 @@
-/* Add at bottom of index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Mobile bottom padding for tab bar */
-.pb-mobile {
-  padding-bottom: 70px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
-@media (min-width: 768px) {
-  .pb-mobile {
-    padding-bottom: 0;
+body {
+  background-color: #141414;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #141414;
+}
+::-webkit-scrollbar-thumb {
+  background: #E50914;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    display: none;
   }
 }
 
-/* Safe area for notch phones */
+/* ===== SKELETON ANIMATION ===== */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #2a2a2a 25%,
+    #3a3a3a 50%,
+    #2a2a2a 75%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ===== HERO GRADIENTS ===== */
+.hero-gradient {
+  background: linear-gradient(
+    to right,
+    rgba(20, 20, 20, 1) 0%,
+    rgba(20, 20, 20, 0.8) 50%,
+    rgba(20, 20, 20, 0.1) 100%
+  );
+}
+
+.hero-bottom-gradient {
+  background: linear-gradient(
+    to top,
+    rgba(20, 20, 20, 1) 0%,
+    transparent 100%
+  );
+}
+
+/* ===== MOVIE ROW SCROLL ===== */
+.movie-row {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.movie-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== FADE IN ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease;
+}
+
+/* ===== MOVIE CARD HOVER ===== */
+.movie-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+  z-index: 10;
+}
+
+/* ===== MOBILE FIXES ===== */
+@media (max-width: 768px) {
+  button {
+    min-height: 40px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+@media (min-width: 769px) {
+  input,
+  select,
+  textarea {
+    font-size: inherit !important;
+  }
+}
+
+/* ===== SAFE AREA ===== */
 .safe-top {
   padding-top: env(safe-area-inset-top);
 }
+
 .safe-bottom {
   padding-bottom: env(safe-area-inset-bottom);
 }
 
-/* Mobile touch highlight remove */
-* {
-  -webkit-tap-highlight-color: transparent;
+/* ===== PAGE TRANSITIONS ===== */
+.page-enter {
+  opacity: 0;
+  transform: translateY(10px);
 }
 
-/* Fix iOS input zoom */
-input, select, textarea {
-  font-size: 16px !important;
-}
-
-@media (min-width: 768px) {
-  input, select, textarea {
-    font-size: inherit !important;
-  }
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
 }
