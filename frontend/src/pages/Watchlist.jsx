@@ -7,7 +7,7 @@ const Watchlist = () => {
   const { watchlist, removeFromWatchlist } = useWatchlist();
 
   return (
-    <div className="min-h-screen pt-16 md:pt-24 px-4 md:px-8 max-w-7xl mx-auto pb-24 md:pb-10">
+<div className="min-h-screen pt-14 sm:pt-16 md:pt-24 px-3 sm:px-4 md:px-8 max-w-7xl mx-auto pb-20 md:pb-10">
       <h1 className="text-3xl font-bold mb-8">
         <span className="text-primary">|</span> My Watchlist
         <span className="ml-3 text-lg text-gray-400">({watchlist.length} items)</span>

@@ -45,7 +45,7 @@ const MovieDetail = () => {
     const mins = movie.runtime % 60;
 
     return (
-        <div className="min-h-screen pb-16 md:pb-0">
+        <div className="min-h-screen pb-20 md:pb-0">
 
             {/* ====== VIDEO PLAYER COMPONENT ====== */}
             {showPlayer && (
@@ -170,11 +170,10 @@ const MovieDetail = () => {
                                             ? removeFromWatchlist(movie.id)
                                             : addToWatchlist(movie)
                                     }
-                                    className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-bold border transition-colors ${
-                                        inList
+                                    className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-bold border transition-colors ${inList
                                             ? 'bg-green-600 border-green-600 text-white'
                                             : 'border-white text-white hover:bg-white hover:text-black'
-                                    }`}
+                                        }`}
                                 >
                                     {inList ? <FiCheck size={20} /> : <FiPlus size={20} />}
                                     <span>{inList ? 'In Watchlist' : 'Add to Watchlist'}</span>

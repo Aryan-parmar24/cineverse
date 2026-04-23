@@ -60,8 +60,8 @@ const Search = () => {
   });
 
   return (
-    <div className="min-h-screen pt-16 md:pt-24 px-4 md:px-8 max-w-7xl mx-auto pb-24 md:pb-10">
-      
+    <div className="min-h-screen pt-14 sm:pt-16 md:pt-24 px-3 sm:px-4 md:px-8 max-w-7xl mx-auto pb-20 md:pb-10">
+
       {/* Search Bar */}
       <div className="mb-10">
         <h1 className="text-3xl font-bold mb-6">
@@ -91,7 +91,7 @@ const Search = () => {
       <div className="flex flex-wrap gap-4 mb-8">
         <select
           value={filters.type}
-          onChange={e => setFilters({...filters, type: e.target.value})}
+          onChange={e => setFilters({ ...filters, type: e.target.value })}
           className="bg-gray-900 border border-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:border-primary"
         >
           <option value="all">All Types</option>
@@ -101,7 +101,7 @@ const Search = () => {
 
         <select
           value={filters.minRating}
-          onChange={e => setFilters({...filters, minRating: e.target.value})}
+          onChange={e => setFilters({ ...filters, minRating: e.target.value })}
           className="bg-gray-900 border border-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:border-primary"
         >
           <option value="">Any Rating</option>
@@ -115,7 +115,7 @@ const Search = () => {
           type="number"
           placeholder="Year (e.g. 2024)"
           value={filters.year}
-          onChange={e => setFilters({...filters, year: e.target.value})}
+          onChange={e => setFilters({ ...filters, year: e.target.value })}
           className="bg-gray-900 border border-gray-700 text-white px-4 py-2 rounded-lg w-40 focus:outline-none focus:border-primary"
         />
       </div>

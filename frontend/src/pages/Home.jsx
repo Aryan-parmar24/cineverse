@@ -61,7 +61,7 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="pb-16 md:pb-0">
+        <div className="pb-20 md:pb-0">
             <HeroSection movies={trending} />
             <div className="relative z-10 -mt-8 md:-mt-16 pb-10">
                 <MovieRow title="🔥 Trending Now" movies={trending} loading={loading} />

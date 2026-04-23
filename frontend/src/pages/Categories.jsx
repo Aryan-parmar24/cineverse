@@ -33,7 +33,7 @@ const Categories = () => {
     }, [selectedGenre]);
 
     return (
-        <div className="min-h-screen pt-16 md:pt-24 px-4 md:px-8 max-w-7xl mx-auto pb-24 md:pb-10">
+        <div className="min-h-screen pt-14 sm:pt-16 md:pt-24 px-3 sm:px-4 md:px-8 max-w-7xl mx-auto pb-20 md:pb-10">
             <h1 className="text-3xl font-bold mb-8">
                 <span className="text-primary">|</span> Browse by Category
             </h1>
@@ -45,8 +45,8 @@ const Categories = () => {
                         key={genre.id}
                         onClick={() => setSelectedGenre(genre)}
                         className={`flex items-center space-x-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedGenre?.id === genre.id
-                                ? 'bg-primary text-white shadow-lg shadow-primary/30 scale-105'
-                                : 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white'
+                            ? 'bg-primary text-white shadow-lg shadow-primary/30 scale-105'
+                            : 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white'
                             }`}
                     >
                         <span>{GENRE_EMOJIS[genre.id] || '🎬'}</span>

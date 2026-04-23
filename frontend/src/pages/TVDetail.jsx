@@ -68,7 +68,7 @@ const TVDetail = () => {
     };
 
     return (
-        <div className="min-h-screen pb-16 md:pb-0">
+        <div className="min-h-screen pb-20 md:pb-0">
 
             {/* ====== VIDEO PLAYER - Using VideoPlayer Component ====== */}
             {showPlayer && (
@@ -182,11 +182,10 @@ const TVDetail = () => {
                                             ? removeFromWatchlist(show.id)
                                             : addToWatchlist(show)
                                     }
-                                    className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-bold border transition-colors ${
-                                        inList
+                                    className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-bold border transition-colors ${inList
                                             ? 'bg-green-600 border-green-600 text-white'
                                             : 'border-white text-white hover:bg-white hover:text-black'
-                                    }`}
+                                        }`}
                                 >
                                     {inList ? <FiCheck size={20} /> : <FiPlus size={20} />}
                                     <span>{inList ? 'In Watchlist' : 'Add to Watchlist'}</span>
@@ -221,11 +220,10 @@ const TVDetail = () => {
                                             setSelectedSeason(s.season_number);
                                             setSelectedEpisode(1);
                                         }}
-                                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                                            selectedSeason === s.season_number
+                                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${selectedSeason === s.season_number
                                                 ? 'bg-primary text-white shadow-lg shadow-primary/30'
                                                 : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                                        }`}
+                                            }`}
                                     >
                                         Season {s.season_number}
                                         <span className="ml-2 text-xs opacity-70">
@@ -251,11 +249,10 @@ const TVDetail = () => {
                                             setSelectedEpisode(ep);
                                             setShowPlayer(true);
                                         }}
-                                        className={`w-12 h-12 rounded-lg text-sm font-bold transition-all hover:scale-110 ${
-                                            selectedEpisode === ep && showPlayer
+                                        className={`w-12 h-12 rounded-lg text-sm font-bold transition-all hover:scale-110 ${selectedEpisode === ep && showPlayer
                                                 ? 'bg-primary text-white shadow-lg shadow-primary/30'
                                                 : 'bg-gray-800 text-gray-300 hover:bg-primary hover:text-white'
-                                        }`}
+                                            }`}
                                     >
                                         {ep}
                                     </button>
