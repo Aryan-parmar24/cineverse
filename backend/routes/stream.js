@@ -107,4 +107,5 @@ router.get('/tv/:tmdbId/:season/:episode', async (req, res) => {
 });
 
 //https://cineverse-backend-q8ud.onrender.com
+//https://cineverse-eight-plum.vercel.app/
 module.exports = router;
